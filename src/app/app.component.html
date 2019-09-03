@@ -1,7 +1,8 @@
-<div class="somediv">
+<div class="somediv" id="main-page">
   <nav class="navbar navbar-expand-lg fixed-top navvy">
-    <a class="navbar-brand" href="#"
+    <a class="navbar-brand"
       ><svg
+        [ngx-scroll-to]="'main-page'"
         width="208"
         height="75"
         viewBox="0 0 208 75"
@@ -219,13 +220,19 @@
     <div class="navbar-collapse collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link navbar-elements" href="#">Talks </a>
+          <a class="nav-link navbar-elements" [ngx-scroll-to]="'talks-div'"
+            >Talks
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link navbar-elements" href="#">Hackathons</a>
+          <a class="nav-link navbar-elements" [ngx-scroll-to]="'hackathons-div'"
+            >Hackathons</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link navbar-elements" href="#">Officers</a>
+          <a class="nav-link navbar-elements" [ngx-scroll-to]="'officers-div'"
+            >Officers</a
+          >
         </li>
       </ul>
     </div>
@@ -234,7 +241,7 @@
 
 <div class="jumbotron ma-jumbo">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-lg-6 col-md-8 col-md-6 col-sm-12">
       <h1 class="display-4">Hello</h1>
       <p class="lead">
         This is a simple hero unit, a simple jumbotron-style component for
@@ -249,7 +256,7 @@
         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
       </p>
     </div>
-    <div class="col-md-6">
+    <div class="col-lg-6 col-md-8 col-md-6 col-sm-12">
       <svg
         width="469"
         height="388"
@@ -295,7 +302,7 @@
     </div>
   </div>
 </div>
-<div class="jumbotron talk-info">
+<div class="jumbotron talk-info" id="talks-div">
   <div class="row">
     <div class="col-md-5">
       <h1 class="display-4">Give a talk</h1>
@@ -312,12 +319,20 @@
         amet ornare nisl ultrices quis. Donec mattis augue turpis, a vulputate
         ex laoreet sed.
       </p>
+      <h1>View Talks</h1>
+      <nav>
+        <a routerLink="/talks" routerLinkActive="active">Crisis Center</a>
+      </nav>
+    </div>
+    <div class="col-lg-12">
+      <br />
+      <br />
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
-<div class = 'hackathon'>
-
-  <div class="container">
+<div class="hackathon" id="hackathons-div">
+  <div class="container" id="no-blur">
     <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
       <div class="carousel-inner w-100" role="listbox">
         <div class="carousel-item row no-gutters active">
@@ -328,10 +343,16 @@
             />
           </div>
           <div class="col-md-4 float-left">
-            <img class="img-fluid" src="http://placehold.it/350x280/444?text=2" />
+            <img
+              class="img-fluid"
+              src="http://placehold.it/350x280/444?text=2"
+            />
           </div>
           <div class="col-md-4 float-left">
-            <img class="img-fluid" src="http://placehold.it/350x280/888?text=3" />
+            <img
+              class="img-fluid"
+              src="http://placehold.it/350x280/888?text=3"
+            />
           </div>
         </div>
 
@@ -340,7 +361,10 @@
             <img class="img-fluid" src="http://placehold.it/350x280?text=5" />
           </div>
           <div class="col-md-4 float-left">
-            <img class="img-fluid" src="http://placehold.it/350x280/555?text=6" />
+            <img
+              class="img-fluid"
+              src="http://placehold.it/350x280/555?text=6"
+            />
           </div>
           <div class="col-md-4 float-left">
             <img
@@ -368,6 +392,23 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
+    </div>
+  </div>
+</div>
+<div class="officers" id="officers-div">
+  <div class="container">
+    <div class="row">
+      <div
+        *ngFor="let officer of officersList"
+        class="col-lg-3 col-md-4 col-xs-6"
+      >
+        <img [src]="officer.imgSrc" class="img-fluid pics" alt="" />
+        <div class="caption">
+          <p class="officers-info">
+            {{ officer.title }}<br />{{ officer.name }}
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

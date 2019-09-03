@@ -2,7 +2,14 @@
 //   background-image: url("../assets/vcubldg.jpg");
 //   background-repeat: no-repeat;
 // }
-
+.nav-item {
+  color: white;
+}
+.nav-item:hover {
+  background-color: white;
+  color: black;
+  border-radius: 1.5rem;
+}
 .navvy {
   background-color: rgb(53, 70, 81);
   border-radius: 0rem 0rem 1.5rem 1.5rem;
@@ -10,14 +17,6 @@
 }
 .somediv {
   background-color: rgb(40, 58, 70);
-}
-.navbar-elements {
-  color: white;
-}
-.navbar-elements:hover {
-  background-color: white;
-  color: black;
-  border-radius: 1.5rem;
 }
 
 .ma-toggler {
@@ -29,10 +28,32 @@
   background-color: rgb(40, 58, 70);
   color: white;
   margin: 0;
+  padding: 15rem;
 }
 .talk-info {
   background-color: rgb(243, 236, 222);
 }
 .hackathon {
-  background: url()
+  background: url("../assets/ramhacks.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  // height: 100%;
+  // width: 100%;
+  padding-bottom: 20rem;
+  padding-top: 20rem;
+  opacity: 0.7;
+}
+.no-blur {
+  opacity: 1;
+}
+
+.officers {
+  background-color: rgb(40, 58, 70);
+}
+.pics {
+  height: 250px;
+  width: 250px;
+  margin-top: 100px;
+  border-radius: 10rem;
 }
